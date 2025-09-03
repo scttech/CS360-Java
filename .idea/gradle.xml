@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/samples" />
+            <option value="$PROJECT_DIR$/samples/fragment_args" />
             <option value="$PROJECT_DIR$/samples/hello_fragment" />
             <option value="$PROJECT_DIR$/samples/hello_world" />
           </set>
