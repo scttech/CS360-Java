@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/samples/fragment_args" />
             <option value="$PROJECT_DIR$/samples/hello_database" />
             <option value="$PROJECT_DIR$/samples/hello_fragment" />
+            <option value="$PROJECT_DIR$/samples/hello_sms" />
             <option value="$PROJECT_DIR$/samples/hello_world" />
           </set>
         </option>
