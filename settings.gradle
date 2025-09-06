@@ -23,3 +23,4 @@ rootProject.name = "CS360Java"
 include ':samples:hello_world'
 include ':samples:hello_fragment'
 include ':samples:fragment_args'
+include ':samples:hello_database'
