@@ -1,4 +1,4 @@
-![Hello Database](./images/snhu.png)
+![Southern New Hampshire University](./images/snhu.png)
 
 # Overview
 
