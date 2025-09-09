@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hello Threading</string>
+    <string name="starting_long_task_on_main_thread">Starting long task on main thread…</string>
+    <string name="done_no_ui_updates">Done… no UI updates</string>
+    <string name="working_in_background">Working in background…</string>
+    <string name="count_text">Count: %1$d</string>
+    <string name="done_ui_updates_work">Done… UI updates work!</string>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hello_threading.MainActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <!-- Button to increment a counter -->
+        <Button
+            android:id="@+id/btnIncrement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Increment Counter" />
+
+        <!-- TextView to display the counter value -->
+        <TextView
+            android:id="@+id/tvCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/count_text"
+            android:textSize="18sp" />
+
+        <!-- Button to start the long task on Main Thread -->
+        <Button
+            android:id="@+id/btnStartMainThread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Long Task on Main Thread" />
+
+        <!-- Button to start the long task in Background -->
+        <Button
+            android:id="@+id/btnStartBackgroundThread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Long Task in Background" />
+
+        <!-- Indeterminate spinner -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Idle" />
+    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
