@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Favorite Apps</string>
+    <string name="app_name_hint">App Name</string>
+    <string name="app_url_hint">App URL</string>
+    <string name="description_hint">Description</string>
+    <string name="add_app">Add App</string>
+    <string name="class_name_hint">Class name</string>
+    <string name="section_hint">Section</string>
+    <string name="semester_hint">Semester (e.g., Fall)</string>
+    <string name="year_hint">Year</string>
+    <string name="add_class_hint">Add Class</string>
+    <string name="add_class">Add Class</string>
+</resources>

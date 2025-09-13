@@ -1,0 +1,15 @@
+<!-- res/menu/bottom_nav_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dashboards"
+        android:icon="@drawable/chart_icon"
+        android:title="Dashboards" />
+    <item
+        android:id="@+id/nav_apps_list"
+        android:icon="@drawable/apps_icon"
+        android:title="Apps" />
+    <item
+        android:id="@+id/nav_classes_list"
+        android:icon="@drawable/desk_icon"
+        android:title="Classes" />
+</menu>

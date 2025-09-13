@@ -1,0 +1,26 @@
+<!-- res/drawable/chart_icon.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Axes -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M3,4h2v16h-2z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M3,20h18v2H3z" />
+
+    <!-- Bars -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M7,13h3v7h-3z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M12,10h3v10h-3z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M17,7h3v13h-3z" />
+</vector>

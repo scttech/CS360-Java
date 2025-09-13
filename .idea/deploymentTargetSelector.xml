@@ -51,10 +51,21 @@
       </SelectionState>
       <SelectionState runConfigName="samples.hello_threading">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-09-09T12:04:36.168085Z">
+        <DropdownSelection timestamp="2025-09-12T19:45:54.506649Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/chris/.android/avd/Medium_Phone.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/chris/.android/avd/M_Phone_API_33.0.avd" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="samples.app_poll">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2025-09-12T19:46:18.976559Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/chris/.android/avd/M_Phone_API_33.0.avd" />
             </handle>
           </Target>
         </DropdownSelection>

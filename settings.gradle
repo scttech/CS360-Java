@@ -16,6 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -26,3 +27,4 @@ include ':samples:fragment_args'
 include ':samples:hello_database'
 include ':samples:hello_sms'
 include ':samples:hello_threading'
+include ':samples:app_poll'
