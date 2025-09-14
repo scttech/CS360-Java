@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hello Sensor</string>
+    <string name="live_sensor">Live sensor</string>
+    <string name="demo_mode_no_ambient_temp_sensor">Demo mode (no ambient temp sensor)</string>
+</resources>

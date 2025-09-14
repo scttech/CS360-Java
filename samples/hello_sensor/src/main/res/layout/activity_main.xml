@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivCharacter"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:contentDescription="temperature character"
+        android:src="@drawable/cold"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false" />
+
+    <TextView
+        android:id="@+id/tvTemp"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="--.- °C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvMode"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"
+        android:text="Live sensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Demo slider appears if the device lacks the Ambient Temperature sensor -->
+    <LinearLayout
+        android:id="@+id/demoContainer"
+        android:visibility="gone"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Demo Temperature"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <SeekBar
+            android:id="@+id/seekDemoTemp"
+            android:max="600"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvDemoHint"
+            android:text="Move the slider to simulate temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
