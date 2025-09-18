@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'com.example.app_poll'
+    namespace 'com.example.bpmonitor'
     compileSdk 36
 
     defaultConfig {
@@ -31,8 +31,6 @@ android {
 dependencies {
 
     implementation libs.appcompat
-    implementation libs.mpandroidchart
-    implementation 'com.opencsv:opencsv:5.9'
     implementation libs.material
     implementation libs.activity
     implementation libs.constraintlayout

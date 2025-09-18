@@ -7,10 +7,13 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.app_poll.classes.ClassItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class AppDatabaseHelper extends SQLiteOpenHelper {
+    private final Context appContext;
 
     private static final String DATABASE_NAME = "app_popularity.db";
     private static final int DATABASE_VERSION = 1;
@@ -40,6 +43,7 @@ public class AppDatabaseHelper extends SQLiteOpenHelper {
 
     public AppDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.appContext = context.getApplicationContext();
     }
 
     /**
@@ -69,6 +73,26 @@ public class AppDatabaseHelper extends SQLiteOpenHelper {
             values.put(C_CLASS_YEAR, year);
             return db.insert(T_CLASSES, null, values);
         }
+    }
+
+    public List<ClassItem> getAllClasses() {
+        List<ClassItem> classes = new ArrayList<>();
+        String sql = "SELECT " + C_ID + ", " + C_CLASS_NAME + ", " + C_CLASS_SECTION + ", " + C_CLASS_SEMESTER + ", " + C_CLASS_YEAR +
+                     " FROM " + T_CLASSES +
+                     " ORDER BY " + C_CLASS_NAME + " ASC";
+        try (SQLiteDatabase db = getReadableDatabase();
+             Cursor c = db.rawQuery(sql, null)) {
+            while (c.moveToNext()) {
+                classes.add(new ClassItem(
+                        c.getInt(0),
+                        c.getString(1),
+                        c.getString(2),
+                        c.getString(3),
+                        c.getString(4)
+                ));
+            }
+        }
+        return classes;
     }
 
     /**
@@ -160,37 +184,10 @@ public class AppDatabaseHelper extends SQLiteOpenHelper {
      * Adds sample data to the database if it is empty.
      */
     public void addSampleData() {
-        if (isEmpty(getReadableDatabase())) {
-            try {
-                long cs360a = insertClass("CS 360", "A", "Fall", "2025");
-                long cs360b = insertClass("CS 360", "B", "Spring", "2025");
-
-                long app1 = insertApp("ChatGizmo", "https://example.com/chatgizmo", "Lightweight group chat");
-                long app2 = insertApp("Weatherly", "https://example.com/weatherly", "Hyper-local forecasts");
-                long app3 = insertApp("TaskPilot", "https://example.com/taskpilot", "Team tasks and Kanban");
-
-                insertVote(app1, cs360a);
-                insertVote(app2, cs360a);
-                insertVote(app2, cs360a);
-                insertVote(app2, cs360a);
-                insertVote(app3, cs360a);
-                insertVote(app3, cs360a);
-                insertVote(app1, cs360b);
-                insertVote(app1, cs360b);
-                insertVote(app1, cs360b);
-                insertVote(app1, cs360b);
-                insertVote(app1, cs360b);
-                insertVote(app2, cs360b);
-                insertVote(app3, cs360b);
-                insertVote(app3, cs360b);
-                insertVote(app3, cs360b);
-                insertVote(app3, cs360b);
-                insertVote(app3, cs360b);
-
-            } finally {
-
-            }
+        if(!isEmpty()) {
+            return;
         }
+        new CsvSampleDataLoader(appContext, this).populateData();
     }
 
     /**
@@ -201,5 +198,11 @@ public class AppDatabaseHelper extends SQLiteOpenHelper {
     private boolean isEmpty(SQLiteDatabase db) {
         return DatabaseUtils.queryNumEntries(db, T_APPS) == 0L
                 && DatabaseUtils.queryNumEntries(db, T_CLASSES) == 0L;
+    }
+
+    public boolean isEmpty() {
+        try (SQLiteDatabase db = getReadableDatabase()) {
+            return isEmpty(db);
+        }
     }
 }

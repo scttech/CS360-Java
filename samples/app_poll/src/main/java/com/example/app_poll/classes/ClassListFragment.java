@@ -3,6 +3,7 @@ package com.example.app_poll.classes;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,42 +42,14 @@ public class ClassListFragment extends Fragment {
 
     private void loadClasses() {
         new Thread(() -> {
-            List<ClassItem> classes = new ArrayList<>();
-            AppDatabaseHelper helper = new AppDatabaseHelper(requireContext().getApplicationContext());
-            SQLiteDatabase db = null;
-            Cursor c = null;
-            try {
-                db = helper.getReadableDatabase();
-                c = db.rawQuery("SELECT id, name, section, semester, year FROM classes ORDER BY name ASC", null);
-                while (c.moveToNext()) {
-                    classes.add(new ClassItem(
-                            c.getInt(0),
-                            c.getString(1),
-                            c.getString(2),
-                            c.getString(3),
-                            c.getString(4)
-                    ));
-                }
-            } finally {
-                if (c != null) c.close();
-                if (db != null && db.isOpen()) db.close();
+            try (AppDatabaseHelper helper = new AppDatabaseHelper(requireContext().getApplicationContext())) {
+                List<ClassItem> classes = new ArrayList<>(helper.getAllClasses());
+                requireActivity().runOnUiThread(() -> adapter.setClasses(classes));
+            } catch (Exception e) {
+                Log.d("ClassListFragment", "Error loading classes", e);
             }
-            requireActivity().runOnUiThread(() -> adapter.setClasses(classes));
+
         }).start();
     }
 
-    static class ClassItem {
-        final int id;
-        final String name;
-        final String section;
-        final String semester;
-        final String year;
-        ClassItem(int id, String name, String section, String semester, String year) {
-            this.id = id;
-            this.name = name;
-            this.section = section;
-            this.semester = semester;
-            this.year = year;
-        }
-    }
 }

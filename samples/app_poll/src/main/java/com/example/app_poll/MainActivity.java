@@ -53,15 +53,15 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        AppDatabaseHelper dbHelper = new AppDatabaseHelper(this);
-        dbHelper.addSampleData();
+        try {
+            AppDatabaseHelper dbHelper = new AppDatabaseHelper(this);
+            dbHelper.addSampleData();
+        } catch (Exception e) {
+            Log.e("MainActivity", "Error initializing database", e);
+        }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(getBottomNavListener());
-
-        // Show the initial fragment
-        //showFragment(new Top10AppsFragment());
-        //bottomNavigationView.setSelectedItemId(R.id.nav_dashboards);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

@@ -50,12 +50,13 @@ public class Top10AppsFragment extends Fragment {
     private void setupChartAppearance() {
         chart.getDescription().setEnabled(false);
         chart.setFitBars(true);
-        chart.setExtraBottomOffset(12f);
+        chart.setExtraBottomOffset(20f);
         chart.getAxisRight().setEnabled(false);
 
         XAxis x = chart.getXAxis();
         x.setPosition(XAxis.XAxisPosition.BOTTOM);
         x.setGranularity(1f);
+        x.setGranularityEnabled(true);
         x.setDrawGridLines(false);
         x.setLabelRotationAngle(-20f);
 
@@ -64,12 +65,12 @@ public class Top10AppsFragment extends Fragment {
     }
 
     /**
-     * Load top 10 apps by votes from the database
+     * Load top apps by votes from the database
      */
     private void loadData() {
         io.execute(() -> {
             AppDatabaseHelper helper = new AppDatabaseHelper(requireContext().getApplicationContext());
-            List<AppVotes> top = helper.getTopAppsByVotes(10);
+            List<AppVotes> top = helper.getTopAppsByVotes(5);
 
             List<String> labels = new ArrayList<>(top.size());
             List<Integer> votes = new ArrayList<>(top.size());

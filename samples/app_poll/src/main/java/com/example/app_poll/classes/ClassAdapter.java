@@ -18,15 +18,15 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHol
         void onClassClick(int classId);
     }
 
-    private List<ClassListFragment.ClassItem> classes;
+    private List<ClassItem> classes;
     private final OnClassClickListener listener;
 
-    public ClassAdapter(List<ClassListFragment.ClassItem> classes, OnClassClickListener listener) {
+    public ClassAdapter(List<ClassItem> classes, OnClassClickListener listener) {
         this.classes = classes;
         this.listener = listener;
     }
 
-    public void setClasses(List<ClassListFragment.ClassItem> newClasses) {
+    public void setClasses(List<ClassItem> newClasses) {
         this.classes = newClasses;
         notifyDataSetChanged();
     }
@@ -41,7 +41,7 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ClassViewHolder holder, int position) {
-        ClassListFragment.ClassItem cls = classes.get(position);
+        ClassItem cls = classes.get(position);
         holder.name.setText(cls.name);
         holder.section.setText(cls.section);
         holder.semester.setText(cls.semester + " " + cls.year);

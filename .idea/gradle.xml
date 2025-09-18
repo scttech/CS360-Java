@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/samples" />
             <option value="$PROJECT_DIR$/samples/app_poll" />
+            <option value="$PROJECT_DIR$/samples/blood_pressure" />
             <option value="$PROJECT_DIR$/samples/fragment_args" />
             <option value="$PROJECT_DIR$/samples/hello_database" />
             <option value="$PROJECT_DIR$/samples/hello_fragment" />
