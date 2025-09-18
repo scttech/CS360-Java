@@ -1,11 +1,13 @@
 # Overview
 
-NOTE: This is a work in progress... currently only using sample data
+NOTE: This is a work in progress... 
 
 This app demonstrates how to use a database to keep track of apps that users select for
 their discussion. 
 
 We can provide historical data on app selection to how the popularity of apps changes over time.
+
+As of Fall 2025, the class favorite is _Spotify_.
 
 # Screenshots
 
