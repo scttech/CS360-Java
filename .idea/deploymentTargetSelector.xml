@@ -77,6 +77,9 @@
       <SelectionState runConfigName="samples.blood_pressure">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="samples.hello_layouts">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

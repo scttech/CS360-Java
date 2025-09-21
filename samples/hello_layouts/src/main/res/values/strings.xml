@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hello Layouts</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="horizontal">Horizontal</string>
+    <string name="vertical">Vertical</string>
+    <string name="constraint">Constraint</string>
+</resources>
