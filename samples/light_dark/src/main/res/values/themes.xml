@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.LightDarkSample" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Apply the Star Wars font app-wide -->
+        <item name="fontFamily">@font/strjmono</item>
+    </style>
+</resources>
