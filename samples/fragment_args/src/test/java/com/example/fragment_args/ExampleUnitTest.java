@@ -1,4 +1,4 @@
-package com.example.app_poll;
+package com.example.fragment_args;
 
 import org.junit.Test;
 

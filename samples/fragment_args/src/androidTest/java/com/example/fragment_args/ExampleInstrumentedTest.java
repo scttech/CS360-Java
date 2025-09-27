@@ -1,4 +1,4 @@
-package com.example.hello_word;
+package com.example.fragment_args;
 
 import android.content.Context;
 

@@ -4,4 +4,4 @@ An app that allows users to input and track their blood pressure readings over t
 
 # Screenshots
 
-![Hello World](../../images/hello_world/hello_world.png)
+![Blood Pressure](../../images/blood_pressure/main.png)
