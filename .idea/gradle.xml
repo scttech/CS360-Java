@@ -23,6 +23,7 @@
             <option value="$PROJECT_DIR$/samples/hello_threading" />
             <option value="$PROJECT_DIR$/samples/hello_world" />
             <option value="$PROJECT_DIR$/samples/light_dark" />
+            <option value="$PROJECT_DIR$/samples/restful_sample" />
           </set>
         </option>
       </GradleProjectSettings>
