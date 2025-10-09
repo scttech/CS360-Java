@@ -92,6 +92,9 @@
       <SelectionState runConfigName="samples.restful_sample">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="samples.using_recycler_view">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

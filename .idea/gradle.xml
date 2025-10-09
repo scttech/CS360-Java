@@ -24,6 +24,7 @@
             <option value="$PROJECT_DIR$/samples/hello_world" />
             <option value="$PROJECT_DIR$/samples/light_dark" />
             <option value="$PROJECT_DIR$/samples/restful_sample" />
+            <option value="$PROJECT_DIR$/samples/using_recycler_view" />
           </set>
         </option>
       </GradleProjectSettings>
